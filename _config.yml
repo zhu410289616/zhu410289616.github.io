@@ -115,7 +115,8 @@ backup:
     type: git
     message: update for hexo blog website
     repository:
-       github: git@github.com:zhu410289616/zhu410289616.github.io.git, hexo
+       github: git@github.com:zhu410289616/zhu410289616.github.io.git
+       branch: hexo
 
 
 

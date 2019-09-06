@@ -112,10 +112,10 @@ jsonContent:
 # hexo的github管理
 ## add by zhuruhong
 backup:
-    type: git
-    message: update for hexo blog website
-    repository:
-       github: git@github.com:zhu410289616/zhu410289616.github.io.git, hexo
+  type: git
+  message: update for hexo blog website
+  repo: https://github.com/zhu410289616/zhu410289616.github.io.git
+  branch: hexo
 
 
 

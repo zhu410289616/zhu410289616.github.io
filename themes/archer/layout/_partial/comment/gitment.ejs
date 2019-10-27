@@ -5,7 +5,8 @@
 <script>
     var gitment = new Gitment({
         // id: "<%- page.title %>", // 可选。默认为 location.href
-        owner: '<%- theme.comment.gitment_owner %>',
+        id: '{{ page.date }}',
+		owner: '<%- theme.comment.gitment_owner %>',
         repo: '<%- theme.comment.gitment_repo %>',
         oauth: {
             client_id: '<%- theme.comment.gitment_client_id %>',
@@ -13,6 +14,6 @@
         },
     })
     gitment.render('container')
-
 </script>
 <% } %>
+

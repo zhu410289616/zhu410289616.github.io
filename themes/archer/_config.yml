@@ -74,8 +74,8 @@ comment:
   # Disqus  site: https://disqus.com/
   disqus_shortname: 
   # Gitment  site: https://github.com/imsun/gitment
-  gitment_owner: zhu410289616 
-  gitment_repo: https://github.com/zhu410289616/zhu410289616.github.io.git 
+  gitment_owner: zhu410289616
+  gitment_repo: zhu410289616.github.io 
   gitment_client_id: cfabc404b062ed1bd33d 
   gitment_client_secret: 8f8480de367c1591bcc7fd5df53be20188c80209
   # Youyan  site: http://www.uyan.cc/

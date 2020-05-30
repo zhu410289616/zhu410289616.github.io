@@ -317,3 +317,15 @@ INFO  Deploy done: git
 > 
 > hexo g -d
 
+
+
+* 15.发布空白
+
+> 解决了:
+> rm -rf .deploy_git/
+> npm i async
+> npm i fsevents
+> npm audit fix --force
+> npm install hexo-deployer-git hexo-server --save
+> hexo clean
+> hexo g -d

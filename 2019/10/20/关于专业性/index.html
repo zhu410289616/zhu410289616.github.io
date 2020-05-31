@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="hong">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="hong">
+    
+    <meta name="keywords" content="410289616,410289616-theme,410289616-blog">
+    
+    <meta name="description" content>
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>关于专业性 · hong&#39;s Studio</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >hong&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">关于专业性</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>hong's Studio.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            关于专业性
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "杂记">杂记</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.6k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/10/20</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="关于专业性"><a href="#关于专业性" class="headerlink" title="关于专业性"></a>关于专业性</h2><p>“我觉得专业性意味着我们有能力和义务为客户提供更合理、更卓越的方案，而不是单纯的盲从客户”，这是我朋友的一句话，我很认同的。</p>
+<p>我们在职场中，在内部晋升，在对外合作，在寻找发展机会时，都需要彰显自己的专业性，体现自己无与伦比的价值。</p>
+<p>软件开发，算是一个专业性比较强的领域，那么我们怎么样才能体现出自己的专业性呢？</p>
+<h3 id="一、需求的解读"><a href="#一、需求的解读" class="headerlink" title="一、需求的解读"></a>一、需求的解读</h3><p>软件需求包括三个不同的层次：<strong>功能需求，用户需求，业务需求</strong>。</p>
+<ul>
+<li><p>功能需求：开发人员必须实现的软件功能，使的用户能够完成某个任务。</p>
+</li>
+<li><p>用户需求：用户使用软件产品可以达到的目的（或者一些列任务），我理解为是满足用户目的的一系列功能的组合。</p>
+</li>
+<li><p>业务需求：通过为用户提供一系列功能，达到组织机构或客户高层次的目标要求。</p>
+</li>
+</ul>
+<p>我认为功能是基础，是软件开发的最小颗粒；而业务需求是目标，是最高层次的终极的要求。只有搭好底层基础，才能满足上层要求，而作为软件开发的基础，需求的解读就是至关重要的一环。</p>
+<p>中文是“博大精深”的，有时候我们避免不了出现对需求解读的多种含义，从而导致结果偏差，那么我们应该定义一个标准、格式或者分类，从侧面辅助保证需求的明确性。比如：</p>
+<ul>
+<li>A-我饿了，我想吃饭了。</li>
+<li>B-请给我一份虾仁炒饭。</li>
+</ul>
+<p>很明显，A像是讨论聊天，不具备操作落地条件。B更符合实现描述。作为软件这种强调逻辑性的场景，其实更需要这样能够反映单一内容的描述方式，“我要一个X；把Y改成Z”。</p>
+<p>如果我们解读需求能够翻译成这样的内容（讨论足够细化），或者更近一步，需求方提供了这样精细的描述，那应该可以事半功倍。</p>
+<h3 id="二、任务的拆解"><a href="#二、任务的拆解" class="headerlink" title="二、任务的拆解"></a>二、任务的拆解</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">脑筋急转弯：</span><br><span class="line">A-把大象放进冰箱一共分几步？答：三步。（打开冰箱门；把大象放进去；把门关上）</span><br><span class="line">B-把长颈鹿放进冰箱，一个分几步？答：四步。（打开冰箱门；把大象拿出来；把长颈鹿放进去；把门关上）</span><br><span class="line">C-森林召开全体动物大会，哪种动物没来？答：长颈鹿。（在冰箱里关着呢）</span><br></pre></td></tr></table></figure>
+
+<p>把“大象放进冰箱”这个脑筋急转弯，我相信大家都听过，就是利用拆解的思维。只不过我们需要拆分的更细，不然“实施的方案”和“投入的时间”都将无法得到最优解。</p>
+<p>我们需要知道大象的体型是多大的？大象是死是活？可以把大象切分开吗？有哪些冰箱？冰箱具体多大？<br>拆分任务，可以让原本复杂的任务难度下降，更易于对其不同方面有针对性地去解决，从而使得任务可以不断地被推动下去。</p>
+<p>拆解原则：</p>
+<ul>
+<li>拆分时不重复，相互独立，以组块化的思维去拆分工作任务。</li>
+<li>拆分时不要遗漏，完全穷尽，可以参考那些知名的思考框架：5W1H模型，麦肯锡7S模型。</li>
+<li>拆分到大脑可以一次处理完，分解到可以执行的下一步行为动作。</li>
+<li>拆分到一个人可以处理完。</li>
+</ul>
+<blockquote>
+<p>有点类似接口设计的原则，开发人员应该比较有体会，短短的描述其实要求极高</p>
+</blockquote>
+<h3 id="三、方案的提供"><a href="#三、方案的提供" class="headerlink" title="三、方案的提供"></a>三、方案的提供</h3><p>不管是大项目还是小项目，我觉得在对任务做拆解后，各个协作团队的负责人基本上都可以做到了然于胸了。大项目应该还有前期的方案调研，而小项目对于开发人员应该都是经验丰富，应该只是小细节的问题了。</p>
+<p>如果对相关的信息都熟悉满点，如臂使指，别人提到的问题都可以对答如流，马上回复，我觉得也是专业的体现。如果同时可以考虑到其他方向，比如存在的风险，规避的方案等等，就更加难能可贵了，让客户有心理预期，或者填补未知空白。</p>
+<h3 id="四、时间的预估"><a href="#四、时间的预估" class="headerlink" title="四、时间的预估"></a>四、时间的预估</h3><p>软件开发的时间，我认为除了依赖“任务拆解”和“所选的方案”外，还在于开发的人力投入，队员之间的协作合作，以及项目进度的把控。</p>
+<p>对外提供的时间点，相当于是团队对外的公开承诺，一个环节的拖延可能会产生连锁反应，也会影响团队的信誉评价。</p>
+<p>我个人偏向以“低估能力”的方式预估开发时间，这样开发会有足够的缓冲时间，因为我们不能保证开发周期中没有突发状况。并且，如果在预估开发时间内提前完成需求，将会有足够的自测和完善时间，我认为白盒自测和黑盒外测应该是并行的，冲忙的开发不利于质量保证。</p>
+<h3 id="五、质量的保证"><a href="#五、质量的保证" class="headerlink" title="五、质量的保证"></a>五、质量的保证</h3><p>开发的质量，很大程度在于团队和个人专业性，包括： <strong>技术能力，责任心，时间</strong>。</p>
+<ul>
+<li><p><strong>技术能力</strong>：可以在事前做好预防工作，注重缺陷预防和问题规避，而不是事后检查和修正。</p>
+</li>
+<li><p><strong>责任心</strong>：高质量可维护的代码我觉得是个人责任心的体现。代码是开发人员为计算机写的诗句，同时不只是机器可读，自己可读，更应该是其他人可读。</p>
+</li>
+<li><p><strong>时间</strong>：“时间是治疗伤疤的良药”，我相信时间是解决问题的钥匙，足够的时间，总是能够把弥补质量上的缺陷。</p>
+</li>
+</ul>
+<p>以上是软件开发过程中的关键节点，我认为每个节点都是专业性体现，只有熟悉每一步，才能像“庖丁解牛”一样做好每一步，才能对外提供卓越的软件产品。 </p>
+<p>【2019.10.20】</p>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://zhu410289616.github.io">hong</a>
+            <p>原文链接：<a href="https://zhu410289616.github.io/2019/10/20/关于专业性/">https://zhu410289616.github.io/2019/10/20/关于专业性/</a>
+            <p>发表日期：<a href="https://zhu410289616.github.io/2019/10/20/关于专业性/">October 20th 2019, 1:12:19 pm</a>
+            <p>更新日期：<a href="https://zhu410289616.github.io/2019/10/20/关于专业性/">May 30th 2020, 10:40:00 pm</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2020/05/30/不翻墙快速下载CocoaPods索引的方法/" title= "不翻墙快速下载CocoaPods索引的方法">
+                    <div class="nextTitle">不翻墙快速下载CocoaPods索引的方法</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/10/19/UICollectionView的异常记录/" title= "UICollectionView的异常记录">
+                    <div class="prevTitle">UICollectionView的异常记录</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+<div id="container"></div>
+<link rel="stylesheet" href="https://zhu410289616.github.io/lakes/css/gitment.css">
+<script src="https://zhu410289616.github.io/lakes/js/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        // id: "关于专业性", // 可选。默认为 location.href
+        id: '{{ page.date }}',
+		owner: 'zhu410289616',
+        repo: 'zhu410289616.github.io',
+        oauth: {
+            client_id: 'cfabc404b062ed1bd33d',
+            client_secret: '1f92849dc18157dd0acce218aea9020fbc27cbad',
+        },
+    })
+    gitment.render('container')
+</script>
+
+
+
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:zhu410289616@163.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/zhu410289616" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/410289616_qr.jpg" />
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于专业性"><span class="toc-number">1.</span> <span class="toc-text">关于专业性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、需求的解读"><span class="toc-number">1.1.</span> <span class="toc-text">一、需求的解读</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、任务的拆解"><span class="toc-number">1.2.</span> <span class="toc-text">二、任务的拆解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、方案的提供"><span class="toc-number">1.3.</span> <span class="toc-text">三、方案的提供</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、时间的预估"><span class="toc-number">1.4.</span> <span class="toc-text">四、时间的预估</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、质量的保证"><span class="toc-number">1.5.</span> <span class="toc-text">五、质量的保证</span></a></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 12
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/30</span><a class="archive-post-title" href= "/2020/05/30/不翻墙快速下载CocoaPods索引的方法/" >不翻墙快速下载CocoaPods索引的方法</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/20</span><a class="archive-post-title" href= "/2019/10/20/关于专业性/" >关于专业性</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/19</span><a class="archive-post-title" href= "/2019/10/19/UICollectionView的异常记录/" >UICollectionView的异常记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/19</span><a class="archive-post-title" href= "/2019/10/19/关于团队协作/" >关于团队协作</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2019/09/28/npm镜像源管理/" >npm镜像源管理</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/21</span><a class="archive-post-title" href= "/2019/09/21/RHSocketKit使用统计/" >RHSocketKit使用统计</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/16</span><a class="archive-post-title" href= "/2019/09/16/git-clone时报RPC-failed/" >git clone时报RPC failed</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/16</span><a class="archive-post-title" href= "/2019/09/16/pod命令记录/" >pod命令记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2019/09/06/Hexo文章备份/" >Hexo文章备份</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2019/09/06/安装brew和node/" >安装brew和node</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2019/09/06/安装Hexo/" >安装Hexo</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/06</span><a class="archive-post-title" href= "/2019/09/06/配置SSH密钥/" >配置SSH密钥</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="socket"><span class="iconfont-archer">&#xe606;</span>socket</span>
+    
+        <span class="sidebar-tag-name" data-tags="UICollectionView"><span class="iconfont-archer">&#xe606;</span>UICollectionView</span>
+    
+        <span class="sidebar-tag-name" data-tags="crash"><span class="iconfont-archer">&#xe606;</span>crash</span>
+    
+        <span class="sidebar-tag-name" data-tags="setSizeHasBeenSet"><span class="iconfont-archer">&#xe606;</span>setSizeHasBeenSet</span>
+    
+        <span class="sidebar-tag-name" data-tags="pod"><span class="iconfont-archer">&#xe606;</span>pod</span>
+    
+        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
+    
+        <span class="sidebar-tag-name" data-tags="node"><span class="iconfont-archer">&#xe606;</span>node</span>
+    
+        <span class="sidebar-tag-name" data-tags="杂记"><span class="iconfont-archer">&#xe606;</span>杂记</span>
+    
+        <span class="sidebar-tag-name" data-tags="SSH"><span class="iconfont-archer">&#xe606;</span>SSH</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "hong"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+

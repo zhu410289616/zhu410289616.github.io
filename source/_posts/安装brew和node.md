@@ -18,7 +18,7 @@ Homebrew/homebrew-core (git revision dabec; last commit 2018-11-10)
 192:RHSocketKit zhuruhong$ 
 ```
 
-* 3.安装node：brew install node
+* 3.安装node：brew install node (注意版本，碰到新版本页面生成空白的问题)
 
 ```
 192:RHSocketKit zhuruhong$ brew install node
